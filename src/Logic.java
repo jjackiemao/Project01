@@ -1,9 +1,8 @@
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Logic {
-    private HashMap<String, Character> morseToChar;
-    private HashMap<Character, String> charToMorse;
+    private final HashMap<String, Character> morseToChar;
+    private final HashMap<Character, String> charToMorse;
 
     public Logic() {
         morseToChar = new HashMap<>();
