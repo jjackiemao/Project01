@@ -10,21 +10,21 @@ public class MainClass {
         // Print a welcome message
         System.out.println("Initiating the Morse Code Translator!");
 
-        // Infinite loop to keep prompting the user until a valid option is selected
+        // Loop until a valid option is selected
         while (true) {
             // Prompt the user to select the translation mode
             System.out.println("Please enter '1' for English to Morse code or '2' for Morse code to English:");
             try {
-                // Read user input and trim leading/trailing spaces
+                // Read user input
                 String input = scanner.nextLine().trim();
 
-                // Checks if the input is empty, if empty prints a warning
+                // Check if the user input is empty; if empty, prompt the user again
                 if (input.isEmpty()) {
                     System.out.println("Input cannot be empty. Please enter a valid option.");
                     continue; // Continue to next iteration of the loop
                 }
 
-                // Converts the input to an integer
+                // Convert input to integer
                 int option = Integer.parseInt(input);
 
                 // Perform actions based on the selected option

@@ -28,13 +28,13 @@ public class TestLogic {
     public void testInvalidInputToEnglish() {
         Logic translator = new Logic();
         String morse = translator.toEnglish("5#3#!#7"); // Invalid Morse code input
-        assertEquals(" ", morse); // Expected empty string
+        assertEquals("", morse); // Expected empty string
     }
 
     @Test
     public void testInvalidInputToMorse() {
         Logic translator = new Logic();
-        String english = translator.toMorse("123"); // Invalid English text input
+        String english = translator.toMorse("##%¤&¤@£$€"); // Invalid English text input
         assertEquals("", english); // Expected empty string
     }
 }
