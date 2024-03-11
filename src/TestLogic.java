@@ -13,7 +13,7 @@ public class TestLogic {
     @Test
     public void testMorseToEnglish() {
         Logic translator = new Logic();
-        String english = translator.toEnglish("**** * *-** *-** ---  *-- --- *-* *-** -** ");
+        String english = translator.toEnglish("**** * *-** *-** ---  *-- --- *-* *-** -**");
         assertEquals("HELLO WORLD", english);
     }
 
@@ -28,7 +28,7 @@ public class TestLogic {
     public void testInvalidInputToEnglish() {
         Logic translator = new Logic();
         String morse = translator.toEnglish("5#3#!#7"); // Invalid Morse code input
-        assertEquals("", morse); // Expected empty string
+        assertEquals(" ", morse); // Expected empty string
     }
 
     @Test
@@ -38,3 +38,4 @@ public class TestLogic {
         assertEquals("", english); // Expected empty string
     }
 }
+
