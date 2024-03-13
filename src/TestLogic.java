@@ -21,7 +21,7 @@ public class TestLogic {
     public void testInvalidMorseCharacter() {
         Logic translator = new Logic();
         String english = translator.toEnglish("***&* * *-** *-** ---  *-- --- *-* *-** -**");
-        assertEquals("*** * HELLO WORLD", english); // Invalid character should be replaced with a space
+        assertEquals("*** * HELLO WORLD", english);
     }
 
 
@@ -29,15 +29,15 @@ public class TestLogic {
     @Test
     public void testInvalidInputToEnglish() {
         Logic translator = new Logic();
-        String morse = translator.toEnglish("5#3#!#7"); // Invalid Morse code input
-        assertEquals("", morse); // Expected empty string
+        String morse = translator.toEnglish("5#3#!#7");
+        assertEquals("", morse); 
     }
 
     @Test
     public void testInvalidInputToMorse() {
         Logic translator = new Logic();
-        String english = translator.toMorse("##%¤&¤@£$€"); // Invalid English text input
-        assertEquals("", english); // Expected empty string
+        String english = translator.toMorse("##%¤&¤@£$€");
+        assertEquals("", english);
     }
 }
 
