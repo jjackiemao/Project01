@@ -2,22 +2,16 @@ import java.util.HashMap;
 
 public class Logic {
 
-    // HashMap to store mappings from Morse code to characters
     private final HashMap<String, Character> morseToChar;
-
-    // HashMap to store mappings from characters to Morse code
     private final HashMap<Character, String> charToMorse;
 
-    // Constructor: initializes HashMaps and populates them with mappings
     public Logic() {
         morseToChar = new HashMap<>();
         charToMorse = new HashMap<>();
         populateMaps();
     }
 
-    // Populate the HashMaps with predefined Morse code and character mappings
     private void populateMaps() {
-        // Populate morseToChar HashMap
         morseToChar.put("*-", 'A');
         morseToChar.put("-***", 'B');
         morseToChar.put("-*-*", 'C');
@@ -58,13 +52,11 @@ public class Logic {
         morseToChar.put("---**", '8');
         morseToChar.put("----*", '9');
 
-        // Populate charToMorse HashMap by reversing morseToChar
         for (String morse : morseToChar.keySet()) {
             charToMorse.put(morseToChar.get(morse), morse);
         }
     }
 
-    // Translate Morse code to English text
     public String toEnglish(String morseCode) {
         StringBuilder english = new StringBuilder();
         String[] words = morseCode.split(" ");
@@ -73,18 +65,16 @@ public class Logic {
             if (morseToChar.containsKey(word)) {
                 english.append(morseToChar.get(word));
             } else if (word.isEmpty()) {
-                english.append(' '); // Append a space if the word is empty
+                english.append(' ');
             } else {
-                // If Morse code input is invalid, print an error message and return an empty string
                 System.out.println("Invalid Morse code input: " + morseCode);
-                return ""; // Return empty string to signify error
+                return ""; 
             }
         }
 
         return english.toString();
     }
 
-    // Translate English text to Morse code
     public String toMorse(String englishText) {
         StringBuilder morse = new StringBuilder();
         char[] chars = englishText.toUpperCase().toCharArray();
@@ -93,11 +83,10 @@ public class Logic {
             if (charToMorse.containsKey(c)) {
                 morse.append(charToMorse.get(c)).append(" ");
             } else if (c == ' ') {
-                morse.append(" "); // Append a space for space character
+                morse.append(" "); 
             } else {
-                // If character input is invalid, print an error message and return an empty string
                 System.out.println("Invalid character input: " + c);
-                return ""; // Return empty string to signify error
+                return "";
             }
         }
 
